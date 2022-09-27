@@ -1,0 +1,146 @@
+.img-button {
+  cursor: pointer;
+  width: 35px;
+}
+
+.img-note {
+  width: 55px;
+}
+
+button {
+  cursor: pointer;
+  padding-right: 15px;
+}
+
+.note-div {
+  display: flex;
+  background-color: #40434b;
+  margin: 15px;
+  max-height: 15vh;
+  /* width: 60vh; */
+}
+
+.note-div-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.note-div-title-and-last-edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-bottom: 2vh;
+  padding-right: 15px;
+  /* width: 60vh; */
+  width: 60vh;
+}
+
+.note-div-last-edit-label {
+  font-size: 15px;
+}
+
+.note-div-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2vh;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  /* min-height: 100vh; */
+  min-height: 10vh;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-left: 15px;
+}
+
+.App-header>* {
+  padding-right: 15px;
+}
+
+.App-body {
+  min-height: 80vh;
+  background-color: #353941;
+}
+
+.App-body-container {
+  /* background-color: #353941; */
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  /* padding-left: 15px; */
+}
+
+.App-footer {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-left: 15px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  padding-bottom: 2vh;
+}
+
+
+.label-left {
+  min-width: 30vh;
+}
+
+.input-right {
+  min-width: 70vh;
+}
+
+.input-right-multiline {
+  min-width: 70vh;
+  min-height: 30vh;
+}

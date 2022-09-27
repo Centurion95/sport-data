@@ -1,0 +1,24 @@
+{
+  "name": "notes-mern-backend",
+  "version": "1.0.0",
+  "description": "notes-mern-backend",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "env-cmd ./config/.env node src/app.js",
+    "start-bkp": "node src/app.js",
+    "dev": "env-cmd ./config/dev.env nodemon src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongodb": "^4.8.1",
+    "mongoose": "^6.5.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "nodemon": "^1.18.9"
+  },
+  "keywords": [],
+  "author": "Rodrigo Centurión",
+  "license": "ISC"
+}
