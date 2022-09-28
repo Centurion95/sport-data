@@ -1,5 +1,5 @@
-# Notes CRUD project in MERN (Mongo Express React Node)
-Simple Notes CRUD project in MERN stack (Mongo Express React Node)
+# Sport Data - Paraguay
+Statistics website of sports data from Paraguay, in MERN stack (Mongo Express React Node)
 
 - Rodrigo Centurión
 (Asunción, Paraguay)
@@ -40,6 +40,23 @@ sh init.sh
 
 ---
 ## Acerca de (About)
+### rc95 - 27/09/2022 20:04
+- First commit del proyecto completo en modo privado, enfocado al tema de la tesis
+- Cambios en el readme
+- Prepoblamos las tablas al inicio:
+  - role
+  - user
+  - continent
+  - country
+  - identifier_type
+  - state
+  - city
+  - sport
+  - region
+  - club
+  - contact_type
+
+
 ### rc95 - 26/08/2022 00:41
 - Se realizan cambios en los 3 `package.json` para separar correctamente los ambientes de producción y desarrollo
 - Se excluyen los archivos `.env` por inconsistencias en producción
