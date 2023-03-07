@@ -1,23 +1,34 @@
 const mongoose = require('mongoose')
 const thisSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        trim: true
+    order_number: {
+        type: Number,
+        // required: true,
     },
-    id_city: {
+    id_local_team: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'City'
+        ref: 'Club'
     },
-    id_region: {
+    id_visiting_team: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'Region'
+        ref: 'Club'
     },
-    gps_location: {
-        type: String,
-        trim: true
+    date: {
+        type: Date,
+        default: null
+    },
+    local_team_final_score: {
+        type: Number,
+    },
+    visiting_team_final_score: {
+        type: Number,
+    },
+    local_team_points_earned: {
+        type: Number,
+    },
+    visiting_team_points_earned: {
+        type: Number,
     },
     archived: {
         type: Boolean,
@@ -38,6 +49,6 @@ const thisSchema = new mongoose.Schema({
 //     next()
 // })
 
-const Club = mongoose.model('Club', thisSchema)
+const Match = mongoose.model('Match', thisSchema)
 
-module.exports = Club
+module.exports = Match

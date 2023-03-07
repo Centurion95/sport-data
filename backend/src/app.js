@@ -227,15 +227,316 @@ const main = async () => {
     //rc95 27/09/2022 19:45 - contact_type
     const contact_type = require('./models/contact_type')
     const email_contact = await new contact_type({ name: 'Email' }).save()
-    const cellphone_contact = await new contact_type({ name: 'Cellphone' }).save()
+    const web_contact = await new contact_type({ name: 'Web' }).save()
+    const phone_contact = await new contact_type({ name: 'Phone' }).save()
     const address_contact = await new contact_type({ name: 'Address' }).save()
     const whatsapp_contact = await new contact_type({ name: 'Whatsapp' }).save()
     const facebook_contact = await new contact_type({ name: 'Facebook' }).save()
     const instagram_contact = await new contact_type({ name: 'Instagram' }).save()
 
+    //rc95 28/09/2022 19:11 - contact
+    const contact = require('./models/contact')
+    const curda_email = await new contact({
+        id_owner: curda._id,
+        id_contact_type: email_contact._id,
+        value: 'curdarugby@gmail.com'
+    }).save()
+    const curda_web = await new contact({
+        id_owner: curda._id,
+        id_contact_type: web_contact._id,
+        value: 'https://www.curda.com.py/'
+    }).save()
+    const curda_phone = await new contact({
+        id_owner: curda._id,
+        id_contact_type: phone_contact._id,
+        value: '(021) 294 695'
+    }).save()
+    const curda_facebook = await new contact({
+        id_owner: curda._id,
+        id_contact_type: facebook_contact._id,
+        value: 'https://www.facebook.com/profile.php?id=100063684515093'
+    }).save()
+    const curda_instagram = await new contact({
+        id_owner: curda._id,
+        id_contact_type: instagram_contact._id,
+        value: 'https://www.instagram.com/curdarugby/'
+    }).save()
 
 
 
+    const sanjo_email = await new contact({
+        id_owner: san_jose._id,
+        id_contact_type: email_contact._id,
+        value: 'info@sanjoserugby.com.py'
+    }).save()
+    const sanjo_phone = await new contact({
+        id_owner: san_jose._id,
+        id_contact_type: phone_contact._id,
+        value: '0991 684988'
+    }).save()
+    const sanjo_facebook = await new contact({
+        id_owner: san_jose._id,
+        id_contact_type: facebook_contact._id,
+        value: 'https://www.facebook.com/sanjoserugbyyhockeyclub'
+    }).save()
+    const sanjo_instagram = await new contact({
+        id_owner: san_jose._id,
+        id_contact_type: instagram_contact._id,
+        value: 'https://www.instagram.com/sanjoserugby/'
+    }).save()
+
+
+
+
+
+    //rc95 28/09/2022 19:38 - person
+    const person = require('./models/person')
+    const rodrigo_centurion = await new person({
+        name: 'Rodrigo Centurión',
+        birthDate: '1995-01-05',
+        gender: 'M',
+        id_identifier_type: cedula_py._id,
+        identifier_number: '4331001',
+        id_country_birth: paraguay._id,
+    }).save()
+    const person_1 = await new person({
+        name: 'person_1',
+        birthDate: '1970-05-18',
+        gender: 'F',
+        id_identifier_type: cedula_py._id,
+        identifier_number: '4987654',
+        id_country_birth: argentina._id,
+    }).save()
+    const person_2 = await new person({
+        name: 'person_2',
+        birthDate: '1989-11-27',
+        gender: 'M',
+        id_identifier_type: cedula_py._id,
+        identifier_number: '3127998',
+        id_country_birth: brasil._id,
+    }).save()
+    const person_3 = await new person({
+        name: 'person_3',
+        birthDate: '1973-03-17',
+        gender: 'M',
+        id_identifier_type: cedula_py._id,
+        identifier_number: '4311689',
+        id_country_birth: paraguay._id,
+    }).save()
+
+
+
+    const rodrigo_centurion__email = await new contact({
+        id_owner: rodrigo_centurion._id,
+        id_contact_type: email_contact._id,
+        value: 'centu95@hotmail.com'
+    }).save()
+    const rodrigo_centurion_phone = await new contact({
+        id_owner: rodrigo_centurion._id,
+        id_contact_type: phone_contact._id,
+        value: '+595972471250'
+    }).save()
+    const rodrigo_centurion_facebook = await new contact({
+        id_owner: rodrigo_centurion._id,
+        id_contact_type: facebook_contact._id,
+        value: 'https://www.facebook.com/centurion95/'
+    }).save()
+    const rodrigo_centurion_instagram = await new contact({
+        id_owner: rodrigo_centurion._id,
+        id_contact_type: instagram_contact._id,
+        value: 'https://www.instagram.com/rcenturion95/'
+    }).save()
+
+
+    //rc95 28/09/2022 22:27 - player
+    const player = require('./models/player')
+    const fichaje_4331001 = await new player({ id_person: rodrigo_centurion._id, id_club: curda._id }).save()
+
+
+    //rc95 28/09/2022 22:24 - staff_role
+    const staff_role = require('./models/staff_role')
+    const president_staff_role = await new staff_role({ name: 'President' }).save()
+    const vice_president_staff_role = await new staff_role({ name: 'Vice President' }).save()
+    const technical_director_staff_role = await new staff_role({ name: 'Technical Director' }).save()
+    const assistant_staff_role = await new staff_role({ name: 'Assistant' }).save()
+    const doctor_staff_role = await new staff_role({ name: 'Doctor' }).save()
+
+    //rc95 28/09/2022 22:32 - staff
+    const staff = require('./models/staff')
+    const staff_1 = await new staff({ id_person: person_1._id, id_club: curda._id, id_role: president_staff_role._id }).save()
+    const staff_2 = await new staff({ id_person: person_2._id, id_club: curda._id, id_role: vice_president_staff_role._id }).save()
+
+
+    //rc95 28/09/2022 22:32 - referee
+    const referee = require('./models/referee')
+    const referee_1 = await new referee({ id_person: person_3._id }).save()
+
+    //rc95 28/09/2022 22:55 - stadium
+    const stadium = require('./models/stadium')
+    const stadium_1 = await new stadium({ name: 'cancha de curda', id_owner: curda._id, id_city: asuncion._id }).save()
+    const stadium_2 = await new stadium({ name: 'cancha de luque', id_owner: luque_rugby._id, id_city: luque._id }).save()
+    const stadium_3 = await new stadium({ name: 'cancha de san jose', id_owner: san_jose._id, id_city: limpio._id }).save()
+
+
+    //rc95 28/09/2022 22:59 - tournament
+    const tournament = require('./models/tournament')
+    const tournament_1 = await new tournament({ name: 'Torneo Oficial 2022 - Primera', id_sport: rugby._id, id_country: paraguay._id }).save()
+    const tournament_2 = await new tournament({ name: 'Torneo clausura 2022', id_sport: rugby._id, id_country: paraguay._id }).save()
+    const tournament_3 = await new tournament({ name: 'Torneo apertura 2022', id_sport: rugby._id, id_country: paraguay._id }).save()
+
+
+    //rc95 28/09/2022 23:07 - match
+    const match = require('./models/match')
+    const tournament_1_final = await new match({
+        order_number: 999,
+        id_local_team: san_jose._id,
+        id_visiting_team: curda._id,
+        date: '2022-09-10 17:30',
+        local_team_final_score: 13,
+        visiting_team_final_score: 21,
+        // local_team_points_earned: 3,
+        // visiting_team_points_earned: 0,
+    }).save()
+
+    const tournament_1_1 = await new match({
+        order_number: 10,
+        id_local_team: curda._id,
+        id_visiting_team: luque_rugby._id,
+        date: '2022-09-03 00:00',
+        local_team_final_score: 62,
+        visiting_team_final_score: 14,
+        local_team_points_earned: 3,
+        visiting_team_points_earned: 0,
+    }).save()
+
+    const tournament_1_2 = await new match({
+        order_number: 9,
+        id_local_team: san_jose._id,
+        id_visiting_team: arc._id,
+        date: '2022-09-03 00:00',
+        local_team_final_score: 34,
+        visiting_team_final_score: 14,
+        local_team_points_earned: 3,
+        visiting_team_points_earned: 0,
+    }).save()
+
+
+
+
+
+    // const tournament_1_4_3 = await new match({
+    //     order_number: 7,
+    //     id_local_team: san_jose._id,
+    //     id_visiting_team: arc._id,
+    //     date: '2022-07-16 16:30',
+    //     stadium: cancha_luque._id,
+    //     local_team_final_score: ?,
+    //     visiting_team_final_score: ?,
+    //     local_team_points_earned: ?,
+    //     visiting_team_points_earned: ?,
+    // }).save()
+
+    const tournament_1_4_2 = await new match({
+        order_number: 6,
+        id_local_team: santa_clara._id,
+        id_visiting_team: cristo_rey._id,
+        date: '2022-07-16 16:30',
+        stadium: miraflores._id,
+        local_team_final_score: 17,
+        visiting_team_final_score: 15,
+        local_team_points_earned: 3,
+        visiting_team_points_earned: 0,
+    }).save()
+
+    // const tournament_1_4_1 = await new match({
+    //     order_number: 5,
+    //     id_local_team: luque._id,
+    //     id_visiting_team: curda._id,
+    //     date: '2022-07-16 15:00',
+    //     stadium: heroes_de_curupayty._id,
+    //     local_team_final_score: ?,
+    //     visiting_team_final_score: ?,
+    //     local_team_points_earned: ?,
+    //     visiting_team_points_earned: ?,
+    // }).save()
+
+
+    // const tournament_1_4_1 = await new match({
+    //     order_number: 2,
+    //     id_local_team: santa_clara._id,
+    //     id_visiting_team: cristo_rey._id,
+    //     date: '2022-07-09 15:00',
+    //     stadium: heroes_de_curupayty._id,
+    //     local_team_final_score: 17,
+    //     visiting_team_final_score: 15,
+    //     local_team_points_earned: 3,
+    //     visiting_team_points_earned: 0,
+    // }).save()
+
+
+    const tournament_1_3_3 = await new match({
+        order_number: 4,
+        id_local_team: luque._id,
+        id_visiting_team: cristo_rey._id,
+        date: '2022-07-09 16:45',
+        stadium: cancha_luque._id,
+        local_team_final_score: 12,
+        visiting_team_final_score: 20,
+        local_team_points_earned: 0,
+        visiting_team_points_earned: 3,
+    }).save()
+
+    const tournament_1_3_2 = await new match({
+        order_number: 3,
+        id_local_team: curda._id,
+        id_visiting_team: san_jose._id,
+        date: '2022-07-09 15:30',
+        stadium: miraflores._id,
+        local_team_final_score: 13,
+        visiting_team_final_score: 13,
+        local_team_points_earned: 3,
+        visiting_team_points_earned: 3,
+    }).save()
+
+
+
+
+    const tournament_1_2_2 = await new match({
+        order_number: 3,
+        id_local_team: santa_clara._id,
+        id_visiting_team: curda._id,
+        date: '2022-07-03 15:00',
+        stadium: ver._id,
+        local_team_final_score: 31,
+        visiting_team_final_score: 10,
+        local_team_points_earned: 3,
+        visiting_team_points_earned: 0,
+    }).save()
+
+    const tournament_1_2_1 = await new match({
+        order_number: 2,
+        id_local_team: san_jose._id,
+        id_visiting_team: luque._id,
+        date: '2022-07-03 15:00',
+        stadium: ver._id,
+        local_team_final_score: 44,
+        visiting_team_final_score: 22,
+        local_team_points_earned: 3,
+        visiting_team_points_earned: 0,
+    }).save()
+
+
+    const tournament_1_1_1 = await new match({
+        order_number: 1,
+        id_local_team: santa_clara._id,
+        id_visiting_team: san_jose._id,
+        date: '2022-06-25 15:00',
+        stadium: heroes_de_curupayty._id,
+        local_team_final_score: 23,
+        visiting_team_final_score: 14,
+        local_team_points_earned: 3,
+        visiting_team_points_earned: 0,
+    }).save()
 
 
     /*

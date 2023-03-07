@@ -5,10 +5,6 @@ const thisSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    gps_location: {
-        type: String,
-        trim: true
-    },
     archived: {
         type: Boolean,
         default: false
@@ -28,6 +24,6 @@ const thisSchema = new mongoose.Schema({
 //     next()
 // })
 
-const Continent = mongoose.model('Continent', thisSchema)
+const Staff_Role = mongoose.model('Staff_Role', thisSchema)
 
-module.exports = Continent
+module.exports = Staff_Role

@@ -10,6 +10,10 @@ const thisSchema = new mongoose.Schema({
         required: true,
         ref: 'Country'
     },
+    gps_location: {
+        type: String,
+        trim: true
+    },
     archived: {
         type: Boolean,
         default: false

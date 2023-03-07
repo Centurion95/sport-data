@@ -1,18 +1,27 @@
 const mongoose = require('mongoose')
 const thisSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    id_continent: {
+    id_person: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'Continent'
+        ref: 'Person'
     },
-    gps_location: {
-        type: String,
-        trim: true
+    id_club: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Club'
+    },
+    id_role: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Role'
+    },
+    date_from: {
+        type: Date,
+        default: null
+    },
+    date_to: {
+        type: Date,
+        default: null
     },
     archived: {
         type: Boolean,
@@ -33,6 +42,6 @@ const thisSchema = new mongoose.Schema({
 //     next()
 // })
 
-const Country = mongoose.model('Country', thisSchema)
+const Staff = mongoose.model('Staff', thisSchema)
 
-module.exports = Country
+module.exports = Staff

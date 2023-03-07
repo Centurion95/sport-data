@@ -12,15 +12,24 @@ const thisSchema = new mongoose.Schema({
     gender: {
         type: String, //M, F (male, female)
         required: true,
+        uppercase: true,
+        trim: true,
+        minLength: 1,
+        maxLength: 1,
     },
     id_identifier_type: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'IdentifierType'
     },
-    document_number: {
+    identifier_number: {
         type: String,
         required: true,
+    },
+    id_country_birth: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Country'
     },
     archived: {
         type: Boolean,
@@ -41,6 +50,6 @@ const thisSchema = new mongoose.Schema({
 //     next()
 // })
 
-const User = mongoose.model('User', thisSchema)
+const Person = mongoose.model('Person', thisSchema)
 
-module.exports = User
+module.exports = Person

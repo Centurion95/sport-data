@@ -89,10 +89,12 @@ button {
   flex-wrap: wrap;
   /* flex-direction: column; */
   /* align-items: center; */
-  /* justify-content: center; */
+  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  /* padding-left: 15px; */
+  padding-left: 25px;
+  padding-top: 45px;
+  padding-bottom: 45px;
 }
 
 .App-footer {
@@ -143,4 +145,208 @@ button {
 .input-right-multiline {
   min-width: 70vh;
   min-height: 30vh;
+}
+
+
+/* rc95 19/10/2022 18:50 */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+  background-color: #282c34;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #282c34;
+  width: 100%;
+  z-index: 1;
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+/*
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+*/
+
+table {
+  border-collapse: collapse;
+  /* width: 100%; */
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #DDD;
+}
+
+tr:hover {
+  background-color: #404949;
+}
+
+
+
+#my_table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  /* width: 100%; */
+  margin-bottom: 45px;
+}
+
+#my_table td,
+#my_table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#my_table tr:nth-child(even) {
+  background-color: #323636;
+}
+
+#my_table tr:hover {
+  background-color: #404949;
+}
+
+#my_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  /* text-align: left; */
+  /* background-color: #04AA6D; */
+  background-color: black;
+  color: white;
+}
+
+/* 
+#my_table td {
+  text-align: center;
+} */
+
+/* rc95 19/10/2022 22:56 */
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #282c34;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+
+  .col-25,
+  .col-75,
+  input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.winner {
+  background-color: #45a049;
 }

@@ -5,9 +5,23 @@ const thisSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    gps_location: {
-        type: String,
-        trim: true
+    id_sport: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Sport'
+    },
+    id_country: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Country'
+    },
+    date_from: {
+        type: Date,
+        default: null
+    },
+    date_to: {
+        type: Date,
+        default: null
     },
     archived: {
         type: Boolean,
@@ -28,6 +42,6 @@ const thisSchema = new mongoose.Schema({
 //     next()
 // })
 
-const Continent = mongoose.model('Continent', thisSchema)
+const Tournament = mongoose.model('Tournament', thisSchema)
 
-module.exports = Continent
+module.exports = Tournament

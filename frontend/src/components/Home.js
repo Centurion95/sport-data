@@ -18,9 +18,10 @@ function Home() {
   const [elements, setElements] = useState([])
 
   useEffect(() => {
-    Axios.get(this_url)
-      .then((response) => { setElements(response.data) })
-      .catch((error) => alert(error))
+
+    // Axios.get(this_url)
+    //   .then((response) => { setElements(response.data) })
+    //   .catch((error) => alert(error))
 
   }, [this_url]);
 
@@ -87,7 +88,7 @@ function Home() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <p>
           Lady - tesis - borrador
         </p>
@@ -103,10 +104,244 @@ function Home() {
           Archived Notes
         </a>
 
-      </header>
+      </header> */}
+
+      <div className="navbar">
+        <a href="#home">Home</a>
+        <div className="subnav">
+          <button className="subnavbtn">Torneos <i className="fa fa-caret-down"></i></button>
+          <div className="subnav-content">
+            <a href="#company">Yakarés MASC</a>
+            <a href="#company">Yakarés FEM</a>
+            <a href="#company">Super 8</a>
+            <a href="#team">Femenino</a>
+            <a href="#company">Zona centro</a>
+            <a href="#careers">Sub intermedia</a>
+            <a href="#careers">Intermedia</a>
+            <a href="#careers">M18</a>
+            <a href="#careers">M16</a>
+            <a href="#careers">M14</a>
+            <a href="#careers">Mini rugby</a>
+          </div>
+        </div>
+        <div className="subnav">
+          <button className="subnavbtn">Services <i className="fa fa-caret-down"></i></button>
+          <div className="subnav-content">
+            <a href="#bring">Bring</a>
+            <a href="#deliver">Deliver</a>
+            <a href="#package">Package</a>
+            <a href="#express">Express</a>
+          </div>
+        </div>
+        <div className="subnav">
+          <button className="subnavbtn">Partners <i className="fa fa-caret-down"></i></button>
+          <div className="subnav-content">
+            <a href="#link1">Link 1</a>
+            <a href="#link2">Link 2</a>
+            <a href="#link3">Link 3</a>
+            <a href="#link4">Link 4</a>
+          </div>
+        </div>
+        <a href="#contact">Contact</a>
+      </div>
+
 
       <div className="App-body">
         <div className="App-body-container">
+
+
+          <div className="container">
+            <div className="row">
+              <div className="col-25">
+                <label>Año</label>
+              </div>
+              <div className="col-75">
+                <select id="country" name="country">
+                  {[2022, 2021, 2020, 2019, 2018, 2017, 2016].map((element) => {
+                    return (<option key={element} value={element}>{element}</option>)
+                  })}
+                </select>
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label>Torneo</label>
+              </div>
+              <div className="col-75">
+                <select id="country" name="country">
+                  {[
+                    'URP - Primera - Clausura 2022',
+                    'URP - Femenino - Clausura 2022',
+                    'URP - Desarrollo (intermedia) 2022',
+                    'URP - M14 - Apertura 2022',
+                    'URP - M16 - Apertura 2022',
+                    'URP - M18 - Apertura 2022',
+                    'URP - Sub intermedia - Apertura 2022',
+                    'URP - Intermedia - Apertura 2022',
+                    'URP - Femenino - Apertura 2022',
+                    'URP - Primera - Apertura 2022',
+                  ].map((element) => {
+                    return (<option key={element} value={element}>{element}</option>)
+                  })}
+                </select>
+              </div>
+            </div>
+
+
+            {/* <div className="row">
+              <div className="col-25">
+                <label>Name</label>
+              </div>
+              <div className="col-75">
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." />
+              </div>
+            </div> */}
+
+            <div className="row">
+              <input type="submit" value="Buscar" />
+            </div>
+            <hr />
+            <div>
+              <p>URP - Primera - Apertura 2022</p>
+              
+              <table id="my_table">
+                <thead>
+                  <tr>
+                    <th colSpan={6}>Fecha 4</th>
+                  </tr>
+                  <tr>
+                    <th>Grupo</th>
+                    <th>Cancha</th>
+                    <th>Fecha - Hora</th>
+                    <th>Equipo 1</th>
+                    <th>Equipo 2</th>
+                    <th>Resultado</th>
+                  </tr>
+
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>A</td>
+                    <td>San Jose</td>
+                    <td>23/10/2022 15:30</td>
+                    <td className='winner'>San Jose</td>
+                    <td>OKC - UAA</td>
+                    <td>52 - 10</td>
+                  </tr>
+                  <tr>
+                    <td>A</td>
+                    <td>Curda</td>
+                    <td>23/10/2022 15:30</td>
+                    <td className='winner'>Curda</td>
+                    <td>Cristo Rey</td>
+                    <td>35 - 12</td>
+                  </tr>
+                  <tr>
+                    <td>A</td>
+                    <td>URP</td>
+                    <td>23/10/2022 15:30</td>
+                    <td>Villa Elisa</td>
+                    <td className='winner'>Santa Clara</td>
+                    <td>0 - 34</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Luque</td>
+                    <td>23/10/2022 15:30</td>
+                    <td className='winner'>Luque</td>
+                    <td>Monday</td>
+                    <td>35 - 5</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Franco</td>
+                    <td>23/10/2022 15:30</td>
+                    <td className='winner'>Franco</td>
+                    <td>Itá</td>
+                    <td>25 - 10</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Area 1</td>
+                    <td>23/10/2022 15:30</td>
+                    <td>Area 1</td>
+                    <td className='winner'>Jabalies</td>
+                    <td>12 - 14</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table id="my_table">
+                <thead>
+                  <tr>
+                    <th colSpan={6}>Fecha 3</th>
+                  </tr>
+                  <tr>
+                    <th>Grupo</th>
+                    <th>Cancha</th>
+                    <th>Fecha - Hora</th>
+                    <th>Equipo 1</th>
+                    <th>Equipo 2</th>
+                    <th>Resultado</th>
+                  </tr>
+
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>A</td>
+                    <td>San Jose</td>
+                    <td>23/10/2022 15:30</td>
+                    <td className='winner'>San Jose</td>
+                    <td>OKC - UAA</td>
+                    <td>52 - 10</td>
+                  </tr>
+                  <tr>
+                    <td>A</td>
+                    <td>Curda</td>
+                    <td>23/10/2022 15:30</td>
+                    <td className='winner'>Curda</td>
+                    <td>Cristo Rey</td>
+                    <td>35 - 12</td>
+                  </tr>
+                  <tr>
+                    <td>A</td>
+                    <td>URP</td>
+                    <td>23/10/2022 15:30</td>
+                    <td>Villa Elisa</td>
+                    <td className='winner'>Santa Clara</td>
+                    <td>0 - 34</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Luque</td>
+                    <td>23/10/2022 15:30</td>
+                    <td className='winner'>Luque</td>
+                    <td>Monday</td>
+                    <td>35 - 5</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Franco</td>
+                    <td>23/10/2022 15:30</td>
+                    <td className='winner'>Franco</td>
+                    <td>Itá</td>
+                    <td>25 - 10</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Area 1</td>
+                    <td>23/10/2022 15:30</td>
+                    <td>Area 1</td>
+                    <td className='winner'>Jabalies</td>
+                    <td>12 - 14</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
           {elements.map((element) => {
             const updatedAt = new Date(element.updatedAt).toLocaleDateString()//"en-US");
 
@@ -219,7 +454,7 @@ function Home() {
       </div>
 
       <footer className="App-footer">
-        <p>Made by Rodrigo Centurión &copy; {new Date().getFullYear()}</p>
+        <p>Rugby Data Paraguay &copy; {new Date().getFullYear()}</p>
       </footer>
     </div >
   );

@@ -40,6 +40,18 @@ sh init.sh
 
 ---
 ## Acerca de (About)
+### rc95 - 28/09/2022 19:39
+- Prepoblamos las tablas al inicio:
+  - contact (club, person)
+  - person
+  - player
+  - staff_role
+  - staff
+  - referee
+  - stadium
+  - tournament
+  - match
+
 ### rc95 - 27/09/2022 20:04
 - First commit del proyecto completo en modo privado, enfocado al tema de la tesis
 - Cambios en el readme

@@ -1,12 +1,18 @@
 const mongoose = require('mongoose')
 const thisSchema = new mongoose.Schema({
-    name: {
+    id_owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        // ref: 'Club' //Person
+    },
+    id_contact_type: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Contact_Type'
+    },
+    value: {
         type: String,
         required: true,
-        trim: true
-    },
-    gps_location: {
-        type: String,
         trim: true
     },
     archived: {
@@ -28,6 +34,6 @@ const thisSchema = new mongoose.Schema({
 //     next()
 // })
 
-const Continent = mongoose.model('Continent', thisSchema)
+const Contact = mongoose.model('Contact', thisSchema)
 
-module.exports = Continent
+module.exports = Contact
